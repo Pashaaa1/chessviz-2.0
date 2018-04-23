@@ -29,3 +29,12 @@ char **board()
     for (i=0; i<9; i++)
     arr[8][i] = 96+i;
     }
+
+       for ( i=1; i<9; i++){
+       arr[0][i]=gl[i-1];
+       arr[7][i]= gl[i-1] -32;
+       arr[1][i]= p;
+       arr[6][i]= p -32;
+    }
+    return arr;
+}
