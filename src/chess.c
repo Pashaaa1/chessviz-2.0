@@ -24,4 +24,8 @@ char **board()
          arr[i][0] = 56-i;
     }
     
+    {
     
+    for (i=0; i<9; i++)
+    arr[8][i] = 96+i;
+    }
