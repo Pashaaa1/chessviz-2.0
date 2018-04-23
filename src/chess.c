@@ -36,5 +36,27 @@ char **board()
        arr[1][i]= p;
        arr[6][i]= p -32;
     }
-    return arr;
-}
+       return arr;
+
+    }
+
+
+    void print_new_board()
+    {
+         arr = board();
+         print_board(arr);
+    }
+
+    void print_board(char **arr)
+    {
+
+    printf("\n");
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 9; j++) {
+                printf("%3c", arr[i][j]);
+          }
+            printf("\n");
+        } 
+     }
+
+    
