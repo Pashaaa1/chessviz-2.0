@@ -51,8 +51,9 @@ char **board()
     {
 
     printf("\n");
-    for (int i = 0; i < 9; i++) {
-        for (int j = 0; j < 9; j++) {
+    int i,j;
+    for (i = 0; i < 9; i++) {
+        for (j = 0; j < 9; j++) {
                 printf("%3c", arr[i][j]);
           }
             printf("\n");
@@ -77,13 +78,14 @@ char **board()
     int board_func(char *one_place, char *two_place) {
 
        int pozition[4];
+       int g;
        pozition[0] = one_place[0] - 96; //a
        pozition[1] = 9 - (one_place[1] - 48) - 1; //2
        pozition[2] = two_place[0] - 96; //c
        pozition[3] = 9 - (two_place[1] - 48) - 1; //8
        printf("\n ");
 
-       for(int g = 0; g < 4; g++) {
+       for(g = 0; g < 4; g++) {
           if (pozition[g] < 0 || pozition[g] > 9) {
               return -1;
         }
