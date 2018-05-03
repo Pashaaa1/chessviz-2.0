@@ -1,21 +1,26 @@
 flags = -g3 -O0 -Wall -Werror
 
-./bin/board :addir ./build/main.o ./build/chess.o
+./bin/board :bin ./build/main.o ./build/chess.o
 	    gcc $(flags) -o ./bin/board ./build/main.o ./build/chess.o -lm
 
-./build/main.o : ./src/main.c ./src/chess.h
+./build/main.o : build ./src/main.c ./src/chess.h
 	    gcc $(flags) -o ./build/main.o -c ./src/main.c
 
-./build/chess.o :./src/chess.c ./src/chess.h
+./build/chess.o : build ./src/chess.c ./src/chess.h
 	    gcc $(flags) -o ./build/chess.o -c ./src/chess.c
 
 
-.PHONY: clean addir open gdb
-addir :
-	    mkdir build bin
-clean :
+bin:
+	mkdir bin
+
+build:
+	mkdir build
+
+.PHONY: clean open gdb
+
+clean:
 	    rm -rf ./build/ ./bin/
-open :
+open:
 	    ./bin/board
 gdb:
 	    gdb ./bin/board
