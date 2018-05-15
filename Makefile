@@ -1,4 +1,4 @@
-flags = -g3 -O0 -Wall -Werror
+ flags = -g3 -O0 -Wall -Werror
 
 ./bin/board :bin ./build/main.o ./build/chess.o
 	    gcc $(flags) -o ./bin/board ./build/main.o ./build/chess.o -lm
@@ -10,7 +10,7 @@ flags = -g3 -O0 -Wall -Werror
 	    gcc $(flags) -o ./build/chess.o -c ./src/chess.c
 
 
-bin:
+bin:	
 	mkdir bin
 
 build:
